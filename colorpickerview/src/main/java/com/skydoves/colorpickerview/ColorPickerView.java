@@ -221,7 +221,7 @@ public class ColorPickerView extends FrameLayout implements LifecycleObserver {
   protected void onSizeChanged(int width, int height, int oldWidth, int oldHeight) {
     super.onSizeChanged(width, height, oldWidth, oldHeight);
 
-    if (palette.getDrawable() == null) {
+    if (palette != null && palette.getDrawable() == null) {
       Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
       palette.setImageDrawable(new ColorHsvPalette(getResources(), bitmap));
     }
